@@ -1,0 +1,12 @@
+[25-Jul-2025 13:19:00 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:19:05 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:19:25 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:19:32 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:19:46 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:38:09 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:38:17 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:39:42 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:41:15 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:41:23 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:43:22 UTC] Database connection error: Access denied for user 'root'@'localhost' (using password: NO)
+[25-Jul-2025 13:47:46 UTC] Error adding student: Email already exists

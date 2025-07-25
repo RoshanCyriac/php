@@ -8,7 +8,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'student_management');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'roshan123');
 define('DB_CHARSET', 'utf8mb4');
 
 /**
@@ -70,6 +70,16 @@ function executeQuery($sql, $params = []) {
         }
         
         $stmt->execute();
+        
+        // For INSERT, UPDATE, DELETE queries, check affected rows
+        if (stripos($sql, 'INSERT') === 0 || stripos($sql, 'UPDATE') === 0 || stripos($sql, 'DELETE') === 0) {
+            $affected_rows = $stmt->affected_rows;
+            $stmt->close();
+            closeDatabaseConnection($conn);
+            return $affected_rows > 0;
+        }
+        
+        // For SELECT queries, return the result set
         $result = $stmt->get_result();
         
         $stmt->close();
