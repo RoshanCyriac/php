@@ -4,6 +4,35 @@
  * Main configuration file with settings, error handling, and session management
  */
 
+// Load environment variables
+function loadEnv($file = '.env') {
+    if (!file_exists($file)) {
+        return false;
+    }
+    
+    $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos($line, '#') === 0) {
+            continue; // Skip comments
+        }
+        
+        if (strpos($line, '=') !== false) {
+            list($key, $value) = explode('=', $line, 2);
+            $key = trim($key);
+            $value = trim($value, '"\'');
+            
+            if (!array_key_exists($key, $_ENV)) {
+                $_ENV[$key] = $value;
+                putenv("$key=$value");
+            }
+        }
+    }
+    return true;
+}
+
+// Load environment variables
+loadEnv();
+
 // Start session if not already started
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -11,17 +40,17 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Error reporting configuration
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
-ini_set('log_errors', 1);
-ini_set('error_log', 'logs/error.log');
+ini_set('display_errors', $_ENV['DISPLAY_ERRORS'] ?? 1);
+ini_set('log_errors', $_ENV['LOG_ERRORS'] ?? 1);
+ini_set('error_log', $_ENV['ERROR_LOG'] ?? 'logs/error.log');
 
 // Application constants
-define('APP_NAME', 'Student Information Management System');
-define('APP_VERSION', '1.0');
-define('UPLOAD_DIR', 'uploads/');
-define('LOGS_DIR', 'logs/');
-define('MAX_FILE_SIZE', 5 * 1024 * 1024); // 5MB
-define('ALLOWED_EXTENSIONS', ['jpg', 'jpeg', 'png', 'gif']);
+define('APP_NAME', $_ENV['APP_NAME'] ?? 'Student Information Management System');
+define('APP_VERSION', $_ENV['APP_VERSION'] ?? '1.0');
+define('UPLOAD_DIR', $_ENV['UPLOAD_DIR'] ?? 'uploads/');
+define('LOGS_DIR', $_ENV['LOGS_DIR'] ?? 'logs/');
+define('MAX_FILE_SIZE', (int)($_ENV['MAX_FILE_SIZE'] ?? 5 * 1024 * 1024)); // 5MB
+define('ALLOWED_EXTENSIONS', explode(',', $_ENV['ALLOWED_EXTENSIONS'] ?? 'jpg,jpeg,png,gif'));
 
 // Create directories if they don't exist
 if (!is_dir(UPLOAD_DIR)) {

@@ -21,18 +21,26 @@ SETUP INSTRUCTIONS:
    - Web server (Apache/Nginx)
    - PHP extensions: mysqli, session, fileinfo
 
-2. DATABASE SETUP:
+2. ENVIRONMENT SETUP:
+   - Copy '.env.example' to '.env'
+   - Update the database credentials in '.env' file:
+     DB_HOST=localhost
+     DB_NAME=student_management
+     DB_USER=root
+     DB_PASS=your_mysql_password
+   - Customize other settings as needed
+
+3. DATABASE SETUP:
    - Create a MySQL database named 'student_management'
    - Import the database structure from 'database.sql'
-   - Update database credentials in 'config/database.php'
 
 3. FILE PERMISSIONS:
    - Ensure 'uploads/' directory is writable (chmod 755)
    - Ensure 'logs/' directory is writable (chmod 755)
 
 4. CONFIGURATION:
-   - Edit 'config/database.php' with your MySQL credentials
-   - Set appropriate error reporting in 'config/config.php'
+   - All configuration is now handled through the '.env' file
+   - No need to edit PHP files for basic configuration
 
 5. ACCESS THE APPLICATION:
    - Place all files in your web server directory
@@ -58,6 +66,16 @@ PROJECT STRUCTURE:
 ├── logs/                 # Application logs
 └── database.sql          # Database structure
 
+ENVIRONMENT VARIABLES:
+=====================
+The application uses environment variables for configuration:
+- Database settings (host, name, user, password)
+- Application settings (name, version, file paths)
+- Upload settings (max file size, allowed extensions)
+- Error reporting settings
+
+All sensitive data is stored in the '.env' file (not committed to version control).
+
 SECURITY FEATURES:
 =================
 - Session-based authentication
@@ -65,6 +83,7 @@ SECURITY FEATURES:
 - File upload validation
 - Error handling and logging
 - Input validation and sanitization
+- Environment-based configuration
 
 TECHNICAL REQUIREMENTS:
 ======================

@@ -1,2 +1,8 @@
 2025-07-25 13:43:56 - User login - Username: admin
 2025-07-25 13:48:32 - Student added - Name: test 2, Email: test2@gmail.com
+2025-07-25 13:50:35 - User logout - Username: admin
+2025-07-25 13:52:43 - User login - Username: admin
+2025-07-25 13:52:53 - Student deleted - ID: 5, Name: David Brown
+2025-07-25 13:52:58 - Student deleted - ID: 2, Name: Jane Smith
+2025-07-25 13:53:00 - Student deleted - ID: 1, Name: John Doe
+2025-07-25 13:53:04 - Student deleted - ID: 3, Name: Mike Johnson

@@ -5,11 +5,11 @@
  */
 
 // Database configuration constants
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'student_management');
-define('DB_USER', 'root');
-define('DB_PASS', 'roshan123');
-define('DB_CHARSET', 'utf8mb4');
+define('DB_HOST', $_ENV['DB_HOST'] ?? 'localhost');
+define('DB_NAME', $_ENV['DB_NAME'] ?? 'student_management');
+define('DB_USER', $_ENV['DB_USER'] ?? 'root');
+define('DB_PASS', $_ENV['DB_PASS'] ?? '');
+define('DB_CHARSET', $_ENV['DB_CHARSET'] ?? 'utf8mb4');
 
 /**
  * Get database connection
