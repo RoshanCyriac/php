@@ -16,7 +16,7 @@ FEATURES:
 QUICK START:
 ===========
 ```bash
-# 1. Clone or download the project.
+# 1. Clone or download the project
 cd /path/to/project
 
 # 2. Set up environment
