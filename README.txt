@@ -11,7 +11,7 @@ FEATURES:
 - Error and exception handling
 - Log file operations
 - User authentication
-- Environment-based configuration.
+- Environment-based configuration
 
 QUICK START:
 ===========
