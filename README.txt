@@ -1,4 +1,4 @@
-STUDENT INFORMATION MANAGEMENT SYSTEM.
+STUDENT INFORMATION MANAGEMENT SYSTEM
 =====================================
 
 This is a web-based PHP application that allows users to manage student records with full CRUD operations.
