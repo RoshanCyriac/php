@@ -1,7 +1,7 @@
 STUDENT INFORMATION MANAGEMENT SYSTEM
 =====================================
 
-This is a web-based PHP application that allows users to manage student records with full CRUD operations
+This is a web-based PHP application that allows users to manage student records with full CRUD operations.
 
 FEATURES:
 - Add, view, search, and update student records
